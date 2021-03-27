@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Todo app</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>TODO LIST</h2>
+        <h3>Add Item</h3>
+        <p>
+            <input id="new-task" type="text"><button>Add</button>
+        </p>
+
+        <h3>Todo</h3>
+        <ul id="incomplete-tasks">
+            <li><input type="checkbox"><label>Read news</label><input type="text" value="Pay Bills"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+            <li><input type="checkbox"><label>Check e-mails</label><input type="text" value="Go Shopping"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+        </ul>
+
+        <h3>Completed</h3>
+        <ul id="completed-tasks">
+            <li><label>exercise</label><button class="delete">Delete</button></li>
+        </ul>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
