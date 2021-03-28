@@ -45,34 +45,32 @@ function editTask(e) {
         // getting the new name of the task for the label
         var newName = editBar.value;
 
-        console.log(newName);
-
         var label = e.target.parentNode.children[1];
 
         // inserting the new name of the task to the label
         label.textContent = newName;
-
-        //checking if the edit button gets clicked
-        console.log('edit');
     }
 }
 
 function taskDone(e) {
-    //completed task
     var task = e.target.parentNode;
+    var checkBox = task.querySelector('input[type="checkbox"]');
 
-    // removing checkbox, edit button and text input from a completed task
-    for(let i = 0; i < task.childNodes.length; i++) {
-        if(i != 1) {
-            task.removeChild(task.childNodes[i]);
+    // checking if the checkbox get clicked
+    if (e.target == checkBox) {
+        // removing checkbox, edit button and text input from a completed task
+        for (let i = 0; i < task.childNodes.length; i++) {
+            if (i != 1) {
+                task.removeChild(task.childNodes[i]);
+            }
         }
+
+        //removing the complete task from the to do list
+        toDoList.removeChild(task);
+
+        //adding the completed task to the completed list
+        completedList.appendChild(task);
     }
-
-    //removing the complete task from the to do list
-    toDoList.removeChild(task);
-
-    //adding the completed task to the completed list
-    completedList.appendChild(task);
 }
 
 function undo(e) {
@@ -88,12 +86,12 @@ function undo(e) {
 
 function deleteTask(e) {
     // checking if the click event was held in delete button
-    if(e.target.classList.contains('delete')) {
+    if (e.target.classList.contains('delete')) {
         var task = e.target.parentNode;
         // deleting the task
 
         //checking if the task belongs to completed task list or not
-        if(task.parentNode == completedList) {
+        if (task.parentNode == completedList) {
             completedList.removeChild(task);
         }
 
